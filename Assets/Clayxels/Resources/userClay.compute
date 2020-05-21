@@ -1,0 +1,22 @@
+
+// User config and custom Signed Distance Functions
+// After changing something here, click reload on the clayxel container in scene.
+
+// defs
+#define MAXTHREADS 8 // set this to 4 on low-end integrated graphic cards
+
+float userClaySDF(uint userSolidType, float3 cellPoint, float3 solidPos, float4 solidRot, float3 solidSize, float4 extraAttrs){
+	float dist = 0.0;
+
+	// example of a user defined solid
+	// extraAttrs.xyzw is used to get extra user-defined values from the editor, 
+	// the label comment below is parsed and shown in the inspector to give your custom solid  a nice name
+	// use it also to give nice names to each extra atrribute you use.
+
+	// if(userSolidType == 0){// label: myCoolPrimitive, x: myCoolAttribute 0.5
+	// 	cellPoint = abs(cellPoint);
+	// 	dist = (cellPoint.x+cellPoint.y+cellPoint.z - extraAttrs.x) * 0.57735027; 
+	// }
+
+	return dist;
+}
